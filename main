@@ -129,12 +129,12 @@ fov_circle.Filled = false
 fov_circle.Visible = false
 fov_circle.ZIndex = 999
 fov_circle.Transparency = 1
-fov_circle.Color = Color3.fromRGB(54, 57, 241)
+fov_circle.Color = Color3.fromRGB(255, 0, 0)
     
 local mouse_box = Drawing.new("Square")
 mouse_box.Visible = true 
 mouse_box.ZIndex = 999 
-mouse_box.Color = Color3.fromRGB(54, 57, 241)
+mouse_box.Color = Color3.fromRGB(255, 0, 0)
 mouse_box.Thickness = 20 
 mouse_box.Size = Vector2.new(20, 20)
 mouse_box.Filled = true 
@@ -147,10 +147,10 @@ do
     Main:AddSlider("Radius", {Text = "Bán kính AIM", Min = 0, Max = 360, Default = 180, Rounding = 0}):OnChanged(function()
         fov_circle.Radius = Options.Radius.Value
     end)
-    Main:AddToggle("Visible", {Text = "Visible"}):AddColorPicker("Color", {Default = Color3.fromRGB(54, 57, 241)}):OnChanged(function()
+    Main:AddToggle("Visible", {Text = "Visible"}):AddColorPicker("Color", {Default = Color3.fromRGB(255, 0, 0)}):OnChanged(function()
         fov_circle.Visible = Toggles.Visible.Value
     end)
-    Main:AddToggle("MousePosition", {Text = "Hiển thị vị trí chuột fake"}):AddColorPicker("MouseVisualizeColor", {Default = Color3.fromRGB(54, 57, 241)}):OnChanged(function()
+    Main:AddToggle("MousePosition", {Text = "Hiển thị vị trí chuột fake"}):AddColorPicker("MouseVisualizeColor", {Default = Color3.fromRGB(255, 0, 0)}):OnChanged(function()
         mouse_box.Visible = Toggles.MousePosition.Value 
     end)
     
