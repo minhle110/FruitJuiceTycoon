@@ -170,6 +170,7 @@ do
     Main:AddDropdown("TargetPart", {Text = "Auto Haki", Default = 1, Values = {
         "Có", "Không"
     }})
+end
 
 resume(create(function()
     RenderStepped:Connect(function()
