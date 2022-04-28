@@ -161,17 +161,6 @@ do
     end)
 end
 
-local GerenalTab = Window:AddTab("New")
-local NewBOX = GeneralTab:AddRightTabbox("Comming Soon")
-do
-    local Main = NewBOX:AddTab("Auto Farm")
-    Main:AddToggle("0", {Text = "Auto Farm Level ( Comming Soon) "})
-    Main:AddToggle("1", {Text = "Fast Attack"})
-    Main:AddDropdown("TargetPart", {Text = "Auto Haki", Default = 1, Values = {
-        "Có", "Không"
-    }})
-end
-
 resume(create(function()
     RenderStepped:Connect(function()
         if Toggles.MousePosition.Value then 
