@@ -107,10 +107,10 @@ do
     Main:AddToggle("aim_Enabled", {Text = "Bật / Tất"})
     Main:AddToggle("TeamCheck", {Text = "Check Team Marine/Pirate"})
     Main:AddToggle("VisibleCheck", {Text = "Visible Check"})
-    Main:AddDropdown("TargetPart", {Text = "Vị trí AIM", Default = 1, Values = {
+    Main:AddDropdown("TargetPart", {Text = "Vị trí AIM", Default = 2, Values = {
         "Đầu", "Thân", "Random"
     }})
-    Main:AddDropdown("Method", {Text = "MinCute Method", Default = 1, Values = {
+    Main:AddDropdown("Method", {Text = "MinCute Method", Default = 5, Values = {
         "Raycast","FindPartOnRay",
         "FindPartOnRayWithWhitelist",
         "FindPartOnRayWithIgnoreList",
@@ -144,7 +144,7 @@ local PredictionAmount = 0.165
 do
     local Main = FieldOfViewBOX:AddTab("Góc nhìn")
     Main:AddToggle("fov_Enabled", {Text = "Bật / Tắt"})
-    Main:AddSlider("Radius", {Text = "Bán kính AIM", Min = 0, Max = 360, Default = 180, Rounding = 0}):OnChanged(function()
+    Main:AddSlider("Radius", {Text = "Bán kính AIM", Min = 0, Max = 360, Default = 360, Rounding = 0}):OnChanged(function()
         fov_circle.Radius = Options.Radius.Value
     end)
     Main:AddToggle("Visible", {Text = "Visible"}):AddColorPicker("Color", {Default = Color3.fromRGB(255, 0, 0)}):OnChanged(function()
@@ -156,7 +156,7 @@ do
     
     local PredictionTab = MiscellaneousBOX:AddTab("Dự đoán Skill")
     PredictionTab:AddToggle("Prediction", {Text = "Mouse.Hit/Target Prediction"})
-    PredictionTab:AddSlider("Amount", {Text = "Prediction Amount( Tối đa? )", Min = 0.165, Max = 1, Default = 0.165, Rounding = 3}):OnChanged(function()
+    PredictionTab:AddSlider("Amount", {Text = "Prediction Amount( Tối đa? )", Min = 0.165, Max = 1, Default = 1, Rounding = 3}):OnChanged(function()
         PredictionAmount = Options.Amount.Value
     end)
 end
